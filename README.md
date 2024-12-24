@@ -13,6 +13,11 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
+
+### after build then move dist back to to the root folder
+cp -R dist/* .
+
+
 ```
 
 ### Lints and fixes files
