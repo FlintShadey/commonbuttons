@@ -118,12 +118,14 @@ export default {
 <style scoped>
 .copy-button {
   color: #fff; /* White text */
-  padding: 15px 30px; /* Large padding for size */
+  padding: 10px 20px; /* Large padding for size */
   font-size: 18px; /* Larger font size */
   border: none;
-  border-radius: 5px;
+  margin:1px;
+  border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 0.5%; /* Smaller margin */
 }
 
 
