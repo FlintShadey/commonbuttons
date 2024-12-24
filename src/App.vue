@@ -34,7 +34,7 @@ export default {
       guardianText:
         "The guardian is given and understands strict follow up and return instruction, guardian agrees and wishes to be discharged.",
       uriText:
-        "The patient presents with cough and congestion. Sinusitis could cause congestion and cough, but it is usually accompanied by facial pain, pressure, and symptoms lasting more than 10 days, which are not present. Bronchitis can present with a cough, but it is typically associated with more severe symptoms such as persistent wheezing or mucus production, which is not the case here. Allergic Rhinitis might cause congestion and cough due to post-nasal drip, but it is typically associated with sneezing, itching, and watery eyes, which are not present. Pneumonia might present with cough and congestion, but it is usually associated with fever, difficulty breathing, and abnormal lung sounds, which are absent in this presentation. Upper Respiratory Infection is often viral and is a common cause of cough and congestion, frequently accompanied by mild fatigue or a sore throat. The patient’s presentation aligns well with this diagnosis. Based on the clinical presentation, upper respiratory infection is considered the most likely diagnosis. The patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.",
+        "The patient presents with cough and congestion. Sinusitis could cause congestion and cough, but it is usually accompanied by facial pain, pressure, and symptoms lasting more than 10 days, which are not present.\n\nBronchitis can present with a cough, but it is typically associated with more severe symptoms such as persistent wheezing or mucus production, which is not the case here.\n\nAllergic Rhinitis might cause congestion and cough due to post-nasal drip, but it is typically associated with sneezing, itching, and watery eyes, which are not present.\n\nPneumonia might present with cough and congestion, but it is usually associated with fever, difficulty breathing, and abnormal lung sounds, which are absent in this presentation.\n\nUpper Respiratory Infection is often viral and is a common cause of cough and congestion, frequently accompanied by mild fatigue or a sore throat. The patient’s presentation aligns well with this diagnosis.\n\nBased on the clinical presentation, upper respiratory infection is considered the most likely diagnosis. The patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.",
       ekgText:
         "EKG Interpretation was performed and documented.",
     };
@@ -153,12 +153,12 @@ export default {
 
 
 .dad-button:hover {
-  background-color: #1c86ee; /* Slightly darker blue on hover */
+  background-color: #135da7; /* Slightly darker blue on hover */
 }
 
 
 .parents-button {
-  background-color: #800080; /* Purple color */
+  background-color: #b41ab4; /* Purple color */
 }
 
 
@@ -178,15 +178,15 @@ export default {
 
 
 .uri-button {
-  background-color: #475a12; /* Yellow color */
+  background-color: #a8d824; /* Yellow color */
 }
 
 .uri-button:hover {
-  background-color: #0a4108; /* Gold on hover */
+  background-color: #2caa27; /* Gold on hover */
 }
 
 .ekg-button {
-  background-color: #ec96c1; /* Pink color */
+  background-color: #f3cde0; /* Pink color */
 }
 
 .ekg-button:hover {
