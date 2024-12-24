@@ -15,6 +15,9 @@
     <button @click="copyDxUri" class="copy-button dx-uri-button">
       Dx:URI
     </button>
+    <button @click="copySinus" class="copy-button sinus-button">
+      Sinus
+    </button>
     <button @click="copyekg" class="copy-button ekg-button">
       EKG
     </button>
@@ -41,6 +44,8 @@ export default {
         "The patient presents with cough and congestion. Sinusitis could cause congestion and cough, but it is usually accompanied by facial pain, pressure, and symptoms lasting more than 10 days, which are not present.\n\nBronchitis can present with a cough, but it is typically associated with more severe symptoms such as persistent wheezing or mucus production, which is not the case here.\n\nAllergic Rhinitis might cause congestion and cough due to post-nasal drip, but it is typically associated with sneezing, itching, and watery eyes, which are not present.\n\nPneumonia might present with cough and congestion, but it is usually associated with fever, difficulty breathing, and abnormal lung sounds, which are absent in this presentation.\n\nUpper Respiratory Infection is often viral and is a common cause of cough and congestion, frequently accompanied by mild fatigue or a sore throat. The patient’s presentation aligns well with this diagnosis.\n\nBased on the clinical presentation, upper respiratory infection is considered the most likely diagnosis. The patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.",
       DxUriText:
         "NASAL CONGESTION - [R09.81] , OTHER FATIGUE- [R53.83], ACUTE UPPER RESPIRATORY INFECTION UNSPECIFIED  - [J06.9], COUGH - [R05], PAIN IN THROAT - [R07.0], MYALGIA, UNSPECIFIED SITE - (M79.10), CONTACT WITH AND (SUSPECTED) EXPOSURE TO OTHER VIRAL COMMUNICABLE DISEASES INCLUDING COVID-19 - [Z20.828]",
+      sinusText:
+        "The patient presents with facial pain and congestion.\n\nMigraine could cause facial pain, but it is typically associated with unilateral throbbing headaches, nausea, and sensitivity to light or sound. These symptoms are not present.\n\nDental Abscess might present with facial pain, especially around the affected tooth, and is usually accompanied by dental symptoms such as toothache, swelling in the gums, or fever. These symptoms are not present.\n\nAllergic Rhinitis can cause congestion, but it is typically associated with itching, sneezing, and watery eyes. These symptoms are not present.\n\nTonsillitis could present with facial pain and congestion, but it is usually accompanied by a sore throat, swollen tonsils, and fever. These symptoms are not present.\n\nSinusitis is an inflammation of the sinuses that typically presents with facial pain or pressure, nasal congestion, purulent nasal discharge, and may be accompanied by fever or fatigue. The patient's symptoms align well with this diagnosis.\n\nBased on the clinical presentation, sinusitis is considered the most likely diagnosis.\n\nThe patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.",
       ekgText:
         "EKG Interpretation was performed and documented.",
     };
@@ -114,6 +119,16 @@ export default {
         })
         .catch((err) => {
           console.error("Could not copy Dx:URI text: ", err);
+        });
+    },
+    copySinus() {
+      navigator.clipboard
+        .writeText(this.sinusText)
+        .then(() => {
+          console.log("Sinus text copied to clipboard");
+        })
+        .catch((err) => {
+          console.error("Could not copy Sinus text: ", err);
         });
     },
     copyekg() {
@@ -208,6 +223,12 @@ export default {
 }
 .dx-uri-button:hover {
   background-color: #2caa27; /* Gold on hover */
+}
+.sinus-button {
+  background-color: peachpuff; /* Pink color */
+}
+.sinus-button:hover {
+  background-color: rgb(212, 167, 126); /* Slightly darker pink on hover */
 }
 .ekg-button {
   background-color: #f3cde0; /* Pink color */
