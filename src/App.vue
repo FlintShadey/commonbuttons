@@ -12,9 +12,13 @@
     <button @click="copyuri" class="copy-button uri-button">
       URI
     </button>
+    <button @click="copyDxUri" class="copy-button dx-uri-button">
+      Dx:URI
+    </button>
     <button @click="copyekg" class="copy-button ekg-button">
       EKG
     </button>
+  
   </div>
 </template>
 
@@ -35,6 +39,8 @@ export default {
         "The guardian is given and understands strict follow up and return instruction, guardian agrees and wishes to be discharged.",
       uriText:
         "The patient presents with cough and congestion. Sinusitis could cause congestion and cough, but it is usually accompanied by facial pain, pressure, and symptoms lasting more than 10 days, which are not present.\n\nBronchitis can present with a cough, but it is typically associated with more severe symptoms such as persistent wheezing or mucus production, which is not the case here.\n\nAllergic Rhinitis might cause congestion and cough due to post-nasal drip, but it is typically associated with sneezing, itching, and watery eyes, which are not present.\n\nPneumonia might present with cough and congestion, but it is usually associated with fever, difficulty breathing, and abnormal lung sounds, which are absent in this presentation.\n\nUpper Respiratory Infection is often viral and is a common cause of cough and congestion, frequently accompanied by mild fatigue or a sore throat. The patient’s presentation aligns well with this diagnosis.\n\nBased on the clinical presentation, upper respiratory infection is considered the most likely diagnosis. The patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.",
+      DxUriText:
+        "NASAL CONGESTION - [R09.81] , OTHER FATIGUE- [R53.83], ACUTE UPPER RESPIRATORY INFECTION UNSPECIFIED  - [J06.9], COUGH - [R05], PAIN IN THROAT - [R07.0], MYALGIA, UNSPECIFIED SITE - (M79.10), CONTACT WITH AND (SUSPECTED) EXPOSURE TO OTHER VIRAL COMMUNICABLE DISEASES INCLUDING COVID-19 - [Z20.828]",
       ekgText:
         "EKG Interpretation was performed and documented.",
     };
@@ -98,6 +104,16 @@ export default {
         })
         .catch((err) => {
           console.error("Could not copy URI text: ", err);
+        });
+    },
+    copyDxUri() {
+      navigator.clipboard
+        .writeText(this.DxUriText)
+        .then(() => {
+          console.log("Dx:URI text copied to clipboard");
+        })
+        .catch((err) => {
+          console.error("Could not copy Dx:URI text: ", err);
         });
     },
     copyekg() {
@@ -187,6 +203,12 @@ export default {
   background-color: #2caa27; /* Gold on hover */
 }
 
+.dx-uri-button {
+  background-color: #a8d824; /* Orange color */
+}
+.dx-uri-button:hover {
+  background-color: #2caa27; /* Gold on hover */
+}
 .ekg-button {
   background-color: #f3cde0; /* Pink color */
 }
