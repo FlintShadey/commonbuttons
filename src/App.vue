@@ -9,6 +9,7 @@
     <button @click="copyGuardian" class="copy-button guardian-button">
       Guardian
     </button>
+    <hr />
     <button @click="copyuri" class="copy-button uri-button">
       URI
     </button>
@@ -18,6 +19,16 @@
     <button @click="copySinus" class="copy-button sinus-button">
       Sinus
     </button>
+    <button @click="copyDxSinus" class="copy-button dx-sinus-button">
+      Dx:Sinus
+    </button>
+    <button @click="copyBronchitis" class="copy-button bronchitis-button">
+      Bronchitis
+    </button>
+    <button @click="copyDxBronchitis" class="copy-button dx-bronchitis-button">
+      Dx:Bronchitis
+    </button>
+    <hr />
     <button @click="copyekg" class="copy-button ekg-button">
       EKG
     </button>
@@ -46,6 +57,12 @@ export default {
         "NASAL CONGESTION - [R09.81] , OTHER FATIGUE- [R53.83], ACUTE UPPER RESPIRATORY INFECTION UNSPECIFIED  - [J06.9], COUGH - [R05], PAIN IN THROAT - [R07.0], MYALGIA, UNSPECIFIED SITE - (M79.10), CONTACT WITH AND (SUSPECTED) EXPOSURE TO OTHER VIRAL COMMUNICABLE DISEASES INCLUDING COVID-19 - [Z20.828]",
       sinusText:
         "The patient presents with facial pain and congestion.\n\nMigraine could cause facial pain, but it is typically associated with unilateral throbbing headaches, nausea, and sensitivity to light or sound. These symptoms are not present.\n\nDental Abscess might present with facial pain, especially around the affected tooth, and is usually accompanied by dental symptoms such as toothache, swelling in the gums, or fever. These symptoms are not present.\n\nAllergic Rhinitis can cause congestion, but it is typically associated with itching, sneezing, and watery eyes. These symptoms are not present.\n\nTonsillitis could present with facial pain and congestion, but it is usually accompanied by a sore throat, swollen tonsils, and fever. These symptoms are not present.\n\nSinusitis is an inflammation of the sinuses that typically presents with facial pain or pressure, nasal congestion, purulent nasal discharge, and may be accompanied by fever or fatigue. The patient's symptoms align well with this diagnosis.\n\nBased on the clinical presentation, sinusitis is considered the most likely diagnosis.\n\nThe patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.",
+      DxSinusText:
+        "FACIAL PAIN - [R10.2], NASAL CONGESTION - [R09.81], ACUTE SINUSITIS - [J01.90], CONTACT WITH AND (SUSPECTED) EXPOSURE TO OTHER VIRAL COMMUNICABLE DISEASES INCLUDING COVID-19 - [Z20.828], HEADACHE, UNSPECIFIED - (R51.9],  ILLNESS, UNSPECIFIED - [R691, NASAL CONGESTION - [R09.81], ACUTE UPPER RESPIRATORY INFECTION, UNSPECIFIED - [J06.9]",
+      bronchitisText:
+        "The patient presents with a cough.\n\nAsthma could cause wheezing and cough, but it is typically associated with shortness of breath, chest tightness, and symptoms that are often triggered by exercise, allergens, or cold air. These symptoms are not present.\n\nPneumonia might present with a cough and wheezing, but it is usually associated with fever, difficulty breathing, and abnormal lung sounds, which are absent in this presentation.\n\nChronic Obstructive Pulmonary Disease (COPD) could cause wheezing and cough, but it is typically associated with a history of smoking, chronic cough, and shortness of breath. These symptoms are not present.\n\nBronchitis is an inflammation of the bronchial tubes that typically presents with a cough, wheezing, and may be accompanied by mucus production. The patient's symptoms align well with this diagnosis.\n\nBased on the clinical presentation, bronchitis is considered the most likely diagnosis.\n\nThe patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.",
+      DxBronchitisText:
+        "COUGH - [R05], CONTACT WITH AND (SUSPECTED) EXPOSURE TO OTHER VIRAL COMMUNICABLE DISEASES INCLUDING COVID-19 - [Z20.828], BRONCHITIS, NOT SPECIFIED AS ACUTE OR CHRONIC - [J40], ILLNESS, UNSPECIFIED - [R69.1], MYALGIA, UNSPECIFIED SITE - [M79.10], FATIGUE - [R53.83]",
       ekgText:
         "EKG Interpretation was performed and documented.",
     };
@@ -129,6 +146,36 @@ export default {
         })
         .catch((err) => {
           console.error("Could not copy Sinus text: ", err);
+        });
+    },
+    copyDxSinus() {
+      navigator.clipboard
+        .writeText(this.DxSinusText)
+        .then(() => {
+          console.log("Dx:Sinus text copied to clipboard");
+        })
+        .catch((err) => {
+          console.error("Could not copy Dx:Sinus text: ", err);
+        });
+    },
+    copyBronchitis() {
+      navigator.clipboard
+        .writeText(this.bronchitisText)
+        .then(() => {
+          console.log("Bronchitis text copied to clipboard");
+        })
+        .catch((err) => {
+          console.error("Could not copy Bronchitis text: ", err);
+        });
+    },
+    copyDxBronchitis() {
+      navigator.clipboard
+        .writeText(this.DxBronchitisText)
+        .then(() => {
+          console.log("Dx:Bronchitis text copied to clipboard");
+        })
+        .catch((err) => {
+          console.error("Could not copy Dx:Bronchitis text: ", err);
         });
     },
     copyekg() {
@@ -229,6 +276,24 @@ export default {
 }
 .sinus-button:hover {
   background-color: rgb(212, 167, 126); /* Slightly darker pink on hover */
+}
+.dx-sinus-button {
+  background-color: peachpuff; /* Pink color */
+}
+.dx-sinus-button:hover {
+  background-color: rgb(212, 167, 126); /* Slightly darker pink on hover */
+}
+.bronchitis-button {
+  background-color: #3ea1c5; /* blue color */
+}
+.bronchitis-button:hover {
+  background-color: #2e6da4; /* Slightly darker blue on hover */
+}
+.dx-bronchitis-button {
+  background-color: #3ea1c5; /* blue color */
+}
+.dx-bronchitis-button:hover {
+  background-color: #2e6da4; /* Slightly darker blue on hover */
 }
 .ekg-button {
   background-color: #f3cde0; /* Pink color */
