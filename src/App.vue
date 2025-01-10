@@ -166,10 +166,10 @@ The patient is safe for outpatient management. Follow-up is advised if symptoms 
 <style scoped>
 .copy-button {
   color: #fff; /* White text */
-  padding: 10px 20px; /* Large padding for size */
-  font-size: 18px; /* Larger font size */
+  padding: 4px 5px; /* Large padding for size */
+  font-size: 16px; /* Larger font size */
   border: none;
-  margin: 1px;
+  margin: 0%;
   border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -181,7 +181,7 @@ The patient is safe for outpatient management. Follow-up is advised if symptoms 
 }
 
 .adult-button:hover {
-  background-color: #1d804e; /* Slightly darker yellow on hover */
+  background-color: #64100a /* Slightly darker yellow on hover */
 }
 
 .mom-button {
