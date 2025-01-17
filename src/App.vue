@@ -1,8 +1,6 @@
 <template>
   <v-app>
-
     <v-main>
-
       <div class="button-container">
         <button @click="copyAdult" class="copy-button adult-button">
           Adult
@@ -34,6 +32,20 @@
           class="copy-button dx-bronchitis-button"
         >
           Dx:Bronchitis
+        </button>
+
+        <button @click="copyflu" class="copy-button flu-button">Flu</button>
+        <button @click="copyDxFlu" class="copy-button flu-button">
+          Dx:Flu
+        </button>
+        <button @click="copypharyngitis" class="copy-button pharyngitis-button">
+          Pharyngitis
+        </button>
+        <button
+          @click="copyDxPharyngitis"
+          class="copy-button pharyngitis-button"
+        >
+          Dx:Pharyngitis
         </button>
         <hr />
         <button
@@ -101,10 +113,32 @@ The patient is safe for outpatient management. Follow-up is advised if symptoms 
     
     Based on the clinical presentation, bronchitis is considered the most likely diagnosis.
     
-    The patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.
-    `,
+    The patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.`,
       dxBronchitisText:
         "ACUTE BRONCHITIS, UNSPECIFIED - [J20.9], BRONCHITIS, NOT SPECIFIED AS ACUTE OR CHRONIC - [J40], ACUTE COUGH - [R05.1], COUGH, UNSPECIFIED - [R05.9], DYSPNEA, UNSPECIFIED - [R06.00]",
+      fluText: `Pneumonia is  a consideration due to respiratory symptoms, becomes less likely due to the absence of focal signs such as lung crackles or increased work of breathing. Sepsis is unlikely, as the patient appears stable with no signs of systemic infection or organ dysfunction. Meningitis is also improbable since the patient does not exhibit symptoms suggestive of this condition, such as severe headache, neck stiffness, vomiting, altered consciousness, or focal neurological deficits. 
+    
+    An asthma exacerbation is less likely, as there is no indication of wheezing or significant respiratory distress during the clinical examination. 
+    
+    The clinical evaluation indicates that they are not septic and do not appear significantly ill.
+    
+    Before discharge, we discussed return precautions, particularly for symptoms suggestive of bacterial co-infection or worsening illness. We also recommended a follow-up with their primary care provider within 2-3 days to monitor progress and ensure that any potential issues are promptly addressed. The patient demonstrated understanding and agreement with this plan.
+    `,
+      dxfluText:
+        "INFLUENZA DUE TO UNIDENTIFIED INFLUENZA VIRUS WITH OTHER RESPIRATORY, MANIFESTATIONS - [J11.1], ACUTE UPPER RESPIRATORY INFECTION, UNSPECIFIED - [J06.9], HEADACHE, UNSPECIFIED - [R51.9], ILLNESS, UNSPECIFIED - [R69], MYALGIA, UNSPECIFIED SITE - [M79.10], CHILLS, FEVER",
+      pharyngitisText: `
+        The patient presents with a sore throat.
+        
+        Mononucleosis can cause a sore throat, but it is often associated with fatigue, swollen lymph nodes, and fever, making it less likely in the absence of these symptoms.
+        
+        Viral pharyngitis is the most common cause of sore throat, often accompanied by mild fever and cold-like symptoms, such as cough or congestion. The absence of other signs of bacterial infection supports this diagnosis.
+        
+        There is currently no sign of a peritonsillar abscess as there is no uvula deviation, no muffled voice, no trismus, and no drooling.
+        
+        Based on the clinical presentation, viral pharyngitis is considered the most likely diagnosis.
+        
+        The patient is safe for outpatient management. Follow-up is advised if symptoms worsen or fail to improve.`,
+        DxPharyngitisText: "PHARYNGITIS, UNSPECIFIED - [J02.9], SORE THROAT - [R07.0], ACUTE UPPER RESPIRATORY INFECTION, UNSPECIFIED - [J06.9], CONTACT WITH AND (SUSPECTED) EXPOSURE TO OTHER VIRAL COMMUNICABLE DISEASES INCLUDING COVID-19 - [Z20.828]",
       splintCheckText:
         "After applying the splint, I checked the patients neurovascular status. The patient displayed normal sensory and motor functions, along with detectable pulses and appropriate capillary refill. There was no need to adjust the splint as it was not exerting pressure on any nerve or blood vessel. The patient received guidance on splint care and was informed about when to seek further medical care.",
       ekgText: "EKG Interpretation was performed and documented.",
@@ -153,6 +187,18 @@ The patient is safe for outpatient management. Follow-up is advised if symptoms 
     copyDxBronchitis() {
       this.copyText(this.dxBronchitisText);
     },
+    copyflu() {
+      this.copyText(this.fluText);
+    },
+    copyDxFlu() {
+      this.copyText(this.dxfluText);
+    },
+    copypharyngitis() {
+      this.copyText(this.pharyngitisText);
+    },
+    copyDxPharyngitis() {
+      this.copyText(this.DxPharyngitisText);
+    },
     copySplintCheck() {
       this.copyText(this.splintCheckText);
     },
@@ -181,7 +227,7 @@ The patient is safe for outpatient management. Follow-up is advised if symptoms 
 }
 
 .adult-button:hover {
-  background-color: #64100a /* Slightly darker yellow on hover */
+  background-color: #64100a; /* Slightly darker yellow on hover */
 }
 
 .mom-button {
@@ -225,7 +271,7 @@ The patient is safe for outpatient management. Follow-up is advised if symptoms 
 }
 
 .dx-uri-button {
-  background-color: #2196f3;; /* Light Blue color */
+  background-color: #2196f3; /* Light Blue color */
 }
 
 .dx-uri-button:hover {
@@ -262,6 +308,18 @@ The patient is safe for outpatient management. Follow-up is advised if symptoms 
 
 .dx-bronchitis-button:hover {
   background-color: #2e6da4; /* Slightly darker blue on hover */
+}
+.flu-button {
+  background-color: #ff9800; /* Orange color */
+}
+.flu-button:hover {
+  background-color: #78781a; /* Slightly darker silver on hover */
+}
+.pharyngitis-button {
+  background-color: #a3404d; /* Orange color */
+}
+.pharyngitis-button:hover {
+  background-color: #41191e; /* Slightly darker silver on hover */
 }
 .splint-check-button {
   background-color: #ff9800; /* Orange color */
