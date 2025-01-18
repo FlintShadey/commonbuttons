@@ -12,6 +12,7 @@ npm run serve
 
 ### Compiles and minifies for production
 ```
+THIS ONE REALLY HAS TO BE IN THE ROOT FOLDER
 npm run build
 
 ### after build then move dist back to to the root folder
